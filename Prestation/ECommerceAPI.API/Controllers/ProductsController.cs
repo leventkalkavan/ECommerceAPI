@@ -22,7 +22,7 @@ namespace ECommerceAPI.API.Controllers
         [HttpGet]
         public IActionResult GetProduct()
         {
-            var products = _productService.GetProduct();
+              var products = _productService.GetProduct();
             return Ok(products);
         }
     }
