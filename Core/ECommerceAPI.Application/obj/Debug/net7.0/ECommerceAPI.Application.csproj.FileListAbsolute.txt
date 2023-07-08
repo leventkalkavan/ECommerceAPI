@@ -1,0 +1,15 @@
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/bin/Debug/net7.0/ECommerceAPI.Application.deps.json
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/bin/Debug/net7.0/ECommerceAPI.Application.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/bin/Debug/net7.0/ECommerceAPI.Application.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/bin/Debug/net7.0/ECommerceAPI.Domain.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/bin/Debug/net7.0/ECommerceAPI.Domain.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.csproj.AssemblyReference.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.AssemblyInfoInputs.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.AssemblyInfo.cs
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.csproj.CoreCompileInputs.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.csproj.CopyComplete
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/refint/ECommerceAPI.Application.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ECommerceAPI.Application.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/obj/Debug/net7.0/ref/ECommerceAPI.Application.dll

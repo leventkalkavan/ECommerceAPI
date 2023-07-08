@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "5ZUnLr6u20kMkCUWOhpiPKrvSNuytT0Vas39jIvVEJtVKSPTI/+fJwZr5WvwFAW27p3abfIcVWfrW+8HQXYbOw==",
+  "success": true,
+  "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/ECommerceAPI.Persistence.csproj",
+  "expectedPackageFiles": [
+    "/Users/leventkalkavan/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0-preview.5.23280.8/microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.5.23280.8.nupkg.sha512"
+  ],
+  "logs": []
+}
