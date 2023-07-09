@@ -9,6 +9,6 @@ public static class ServiceRegistation
 {
     public static void AddPersistenceServices(this IServiceCollection services)
     {
-        services.AddDbContext<ECommcerAPIDbContext>(options => options.UseSqlServer(Configuration.ConnectionString));
+        services.AddDbContext<ECommerceAPIDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString));
     }
 }
