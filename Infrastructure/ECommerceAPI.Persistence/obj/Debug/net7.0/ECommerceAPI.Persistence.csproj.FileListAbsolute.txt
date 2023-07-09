@@ -15,3 +15,5 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/obj/Debug/net7.0/refint/ECommerceAPI.Persistence.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/obj/Debug/net7.0/ECommerceAPI.Persistence.pdb
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/obj/Debug/net7.0/ref/ECommerceAPI.Persistence.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/bin/Debug/net7.0/ECommerceAPI.Persistence.runtimeconfig.json
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/obj/Debug/net7.0/ECommerceAPI.Persistence.genruntimeconfig.cache

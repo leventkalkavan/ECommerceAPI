@@ -4,6 +4,7 @@ namespace ECommerceAPI.Domain.Entities;
 
 public class Product:BaseEntity
 {
+    public ICollection<Order> Orders { get; set; }
     public string Name { get; set; }
     public string Stock { get; set; }
     public long Price { get; set; }
