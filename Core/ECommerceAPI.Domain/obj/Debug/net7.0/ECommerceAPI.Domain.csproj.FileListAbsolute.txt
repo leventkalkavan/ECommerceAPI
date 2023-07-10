@@ -10,3 +10,5 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Domain/obj/Debug/net7.0/refint/ECommerceAPI.Domain.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Domain/obj/Debug/net7.0/ECommerceAPI.Domain.pdb
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Domain/obj/Debug/net7.0/ref/ECommerceAPI.Domain.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Domain/bin/Debug/net7.0/ECommerceAPI.Domain.runtimeconfig.json
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Domain/obj/Debug/net7.0/ECommerceAPI.Domain.genruntimeconfig.cache

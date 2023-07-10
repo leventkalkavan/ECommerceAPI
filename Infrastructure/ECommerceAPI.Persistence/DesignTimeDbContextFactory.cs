@@ -9,8 +9,9 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ECommerceA
 {
     public ECommerceAPIDbContext CreateDbContext(string[] args)
     {
-        DbContextOptionsBuilder<ECommerceAPIDbContext> dbContextOptionsBuilder = new();
-        dbContextOptionsBuilder.UseSqlServer(Configuration.GetConnectionString);
-        return new(dbContextOptionsBuilder.Options);
+        var optionsBuilder = new DbContextOptionsBuilder<ECommerceAPIDbContext>();
+        optionsBuilder.UseSqlServer(Configuration.GetConnectionString);
+
+        return new ECommerceAPIDbContext(optionsBuilder.Options);
     }
 }

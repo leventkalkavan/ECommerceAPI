@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZP39QO9Ix8ZnoyXDRGwVHk7K0BrARgMmwvTBc76arplmJNNwlzUnC2hqXh8HTb+pIWHVtrGDe+ne4l6Do9/rPA==",
+  "dgSpecHash": "cr4E4curQZnIzNyPkfavelq8lGuUFTXNoeXu77hdNJsxrMXqU5PN1YzMh42ZKC9o1kxJCqlMP0VZCIsMXc5Lew==",
   "success": true,
   "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/ECommerceAPI.Persistence.csproj",
   "expectedPackageFiles": [
