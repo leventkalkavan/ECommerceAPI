@@ -18,11 +18,35 @@ public class ReadRepository<T>:IReadRepository<T> where T:BaseEntity
     }
 
 
-    public IQueryable<T> GetAll() => Table;
+    public IQueryable<T> GetAll(bool tracking = true)
+    {
+        var query = Table.AsQueryable();
+        if (!tracking)
+            query = query.AsNoTracking();
+            return query;
+    }
 
-    public IQueryable<T> GetWhere(Expression<Func<T, bool>> method) => Table.Where(method);
+    public IQueryable<T> GetWhere(Expression<Func<T, bool>> method, bool tracking = true)
+    {
+        var query = Table.Where(method);
+        if (!tracking)
+            query = query.AsNoTracking();
+        return query;
+    }
 
-    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method) => await Table.FirstOrDefaultAsync();
+    public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool tracking = true)
+    {
+        var query = Table.AsNoTracking();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.FirstOrDefaultAsync(method);
+    }
 
-    public async Task<T> GetByIdAsync(string id) => await Table.FindAsync(Guid.Parse(id));
+    public async Task<T> GetByIdAsync(string id, bool tracking = true)
+    {
+        var query = Table.AsNoTracking();
+        if (!tracking)
+            query = query.AsNoTracking();
+        return await query.FirstOrDefaultAsync(x=>x.Id==Guid.Parse(id));
+    }
 }
