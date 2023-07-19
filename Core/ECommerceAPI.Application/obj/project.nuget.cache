@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rxrXtknwqQGhA4+G1LsWOqAIkoZKmfT79VtPTokAO5hfmqIoMuwn3TTDaLvub4NGt/h5ThF2zr1PhCrZ5Hj51g==",
+  "dgSpecHash": "pVXTYaNDAoW1EUWvtIU2KOH1NgF93Tf8iyuk8OyvGiw8selD1Bpne+fUSVdE0eavpPplYVHSQ3GJiJM+dfXjGA==",
   "success": true,
   "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/ECommerceAPI.Application.csproj",
   "expectedPackageFiles": [
+    "/Users/leventkalkavan/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.entityframeworkcore/7.0.0/microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.0/microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.0/microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
