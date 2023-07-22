@@ -9,6 +9,7 @@
       "ECommerceAPI.API/1.0.0": {
         "dependencies": {
           "ECommerceAPI.Application": "1.0.0",
+          "ECommerceAPI.Infrastructure": "1.0.0",
           "ECommerceAPI.Persistence": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.0",
@@ -2430,6 +2431,14 @@
           "ECommerceAPI.Domain.dll": {}
         }
       },
+      "ECommerceAPI.Infrastructure/1.0.0": {
+        "dependencies": {
+          "ECommerceAPI.Application": "1.0.0"
+        },
+        "runtime": {
+          "ECommerceAPI.Infrastructure.dll": {}
+        }
+      },
       "ECommerceAPI.Persistence/1.0.0": {
         "dependencies": {
           "ECommerceAPI.Application": "1.0.0",
@@ -3809,6 +3818,11 @@
       "sha512": ""
     },
     "ECommerceAPI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommerceAPI.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -18,11 +18,17 @@
     <ProjectReference Include="..\..\Core\ECommerceAPI.Application\ECommerceAPI.Application.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Infrastructure\ECommerceAPI.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Persistence\ECommerceAPI.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
+    <Folder Include="wwwroot\resource\product-images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\resource\product-images\746255960.png" />
   </ItemGroup>
 </Project>

@@ -3913,6 +3913,19 @@
           "bin/placeholder/ECommerceAPI.Domain.dll": {}
         }
       },
+      "ECommerceAPI.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "ECommerceAPI.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ECommerceAPI.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerceAPI.Infrastructure.dll": {}
+        }
+      },
       "ECommerceAPI.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -11203,6 +11216,11 @@
       "path": "../../Core/ECommerceAPI.Domain/ECommerceAPI.Domain.csproj",
       "msbuildProject": "../../Core/ECommerceAPI.Domain/ECommerceAPI.Domain.csproj"
     },
+    "ECommerceAPI.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj"
+    },
     "ECommerceAPI.Persistence/1.0.0": {
       "type": "project",
       "path": "../../Infrastructure/ECommerceAPI.Persistence/ECommerceAPI.Persistence.csproj",
@@ -11212,6 +11230,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "ECommerceAPI.Application >= 1.0.0",
+      "ECommerceAPI.Infrastructure >= 1.0.0",
       "ECommerceAPI.Persistence >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 7.0.0",
@@ -11246,6 +11265,9 @@
           "projectReferences": {
             "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/ECommerceAPI.Application.csproj": {
               "projectPath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Core/ECommerceAPI.Application/ECommerceAPI.Application.csproj"
+            },
+            "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj": {
+              "projectPath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj"
             },
             "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/ECommerceAPI.Persistence.csproj": {
               "projectPath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Persistence/ECommerceAPI.Persistence.csproj"

@@ -282,3 +282,5 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/FluentValidation.AspNetCore.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/FluentValidation.DependencyInjectionExtensions.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/ECommerceAPI.API.staticwebassets.runtime.json
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/ECommerceAPI.Infrastructure.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/ECommerceAPI.Infrastructure.pdb
