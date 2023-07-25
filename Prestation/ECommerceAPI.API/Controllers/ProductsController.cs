@@ -133,7 +133,7 @@ namespace ECommerceAPI.API.Controllers
             //}).ToList());
             //await _invoiceFileWriteRepository.SaveAsync();
 
-            //await _fileWriteRepository.AddRangeAsync(datas.Select(d => new ETicaretAPI.Domain.Entities.File()
+            //await _fileWriteRepository.AddRangeAsync(datas.Select(d => new ECommerceAPI.Domain.Entities.File()
             //{
             //    FileName = d.fileName,
             //    Path = d.path
@@ -146,6 +146,5 @@ namespace ECommerceAPI.API.Controllers
 
             return Ok();
         }
-
     }
 }
