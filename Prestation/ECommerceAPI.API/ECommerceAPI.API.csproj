@@ -25,10 +25,18 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\" />
-    <Folder Include="wwwroot\resource\product-images\" />
+    <Folder Include="wwwroot\resource\files\" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Remove="wwwroot\resource\product-images\746255960.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-2.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-3.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir-2.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir.jpeg" />
   </ItemGroup>
 </Project>

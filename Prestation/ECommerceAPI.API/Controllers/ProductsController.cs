@@ -115,9 +115,8 @@ namespace ECommerceAPI.API.Controllers
         [HttpPost("[action]")]
         public async Task<IActionResult> Upload()
         {
-            var datas = await _storageService.UploadAsync("resource/files", Request.Form.Files);
-            //var datas = await _fileService.UploadAsync("resource/files", Request.Form.Files);
-            await _productImageFileWriteRepository.AddRangeAsync(datas.Select(d => new ProductImageFile()
+            var data = await _storageService.UploadAsync("files", Request.Form.Files);
+            await _productImageFileWriteRepository.AddRangeAsync(data.Select(d => new ProductImageFile()
             {
                 FileName = d.fileName,
                 Path = d.pathOrContainerName,
@@ -125,7 +124,7 @@ namespace ECommerceAPI.API.Controllers
             }).ToList());
             await _productImageFileWriteRepository.SaveAsync();
 
-            //await _invoiceFileWriteRepository.AddRangeAsync(datas.Select(d => new InvoiceFile()
+            //await _invoiceFileWriteRepository.AddRangeAsync(data.Select(d => new InvoiceFile()
             //{
             //    FileName = d.fileName,
             //    Path = d.path,
@@ -133,7 +132,7 @@ namespace ECommerceAPI.API.Controllers
             //}).ToList());
             //await _invoiceFileWriteRepository.SaveAsync();
 
-            //await _fileWriteRepository.AddRangeAsync(datas.Select(d => new ECommerceAPI.Domain.Entities.File()
+            //await _fileWriteRepository.AddRangeAsync(data.Select(d => new ECommerceAPI.Domain.Entities.File()
             //{
             //    FileName = d.fileName,
             //    Path = d.path

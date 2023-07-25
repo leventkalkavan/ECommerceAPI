@@ -1,6 +1,18 @@
 {
   "Files": [
     {
+      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/indir.jpeg",
+      "PackagePath": "staticwebassets/files/indir.jpeg"
+    },
+    {
+      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/ornek-2.jpg",
+      "PackagePath": "staticwebassets/files/ornek-2.jpg"
+    },
+    {
+      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/ornek.jpg",
+      "PackagePath": "staticwebassets/files/ornek.jpg"
+    },
+    {
       "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/8675035icfluenteditregularicon-2.png",
       "PackagePath": "staticwebassets/resource/product-images/8675035icfluenteditregularicon-2.png"
     },
