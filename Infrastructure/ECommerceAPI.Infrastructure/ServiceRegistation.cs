@@ -1,8 +1,9 @@
 using ECommerceAPI.Application.Abstractions.Storage;
 using ECommerceAPI.Application.Abstractions.Storage.Azure;
 using ECommerceAPI.Infrastructure.Storage;
-using ECommerceAPI.Infrastructure.Storage.Local;
 using ECommerceAPI.Infrastructure.Enums;
+using ECommerceAPI.Infrastructure.Services.Local;
+using ECommerceAPI.Infrastructure.Services.Storage;
 using ECommerceAPI.Infrastructure.Storage.Azure;
 using Microsoft.Extensions.DependencyInjection;
 

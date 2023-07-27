@@ -1,9 +1,9 @@
 using ECommerceAPI.Application.Abstractions.Storage;
 using Microsoft.AspNetCore.Http;
 
-namespace ECommerceAPI.Infrastructure.Storage;
+namespace ECommerceAPI.Infrastructure.Services.Storage;
 
-public class StorageService:IStorageService
+public class StorageService : IStorageService
 {
     readonly IStorage _storage;
 
