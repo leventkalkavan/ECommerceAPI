@@ -40,7 +40,7 @@ namespace ECommerceAPI.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("ECommerceAPI.Domain.Entities.File", b =>
@@ -170,7 +170,7 @@ namespace ECommerceAPI.Persistence.Migrations
                     b.HasBaseType("ECommerceAPI.Domain.Entities.File");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasDiscriminator().HasValue("InvoiceFile");
                 });

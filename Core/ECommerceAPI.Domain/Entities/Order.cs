@@ -2,7 +2,7 @@ using ECommerceAPI.Domain.Entities.Common;
 
 namespace ECommerceAPI.Domain.Entities;
 
-public class Order:BaseEntity
+public class Order : BaseEntity
 {
     public Guid CustomerId { get; set; }
     public string Description { get; set; }

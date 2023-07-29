@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ECommerceAPI.Persistence.Migrations
 {
     [DbContext(typeof(ECommerceAPIDbContext))]
-    [Migration("20230726155559_26.07UpdateDatabase")]
-    partial class _2607UpdateDatabase
+    [Migration("20230728144531_updateInvoiceFile2")]
+    partial class updateInvoiceFile2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,7 +43,7 @@ namespace ECommerceAPI.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("ECommerceAPI.Domain.Entities.File", b =>
@@ -173,7 +173,7 @@ namespace ECommerceAPI.Persistence.Migrations
                     b.HasBaseType("ECommerceAPI.Domain.Entities.File");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasDiscriminator().HasValue("InvoiceFile");
                 });

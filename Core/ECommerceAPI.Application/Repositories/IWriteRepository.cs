@@ -1,15 +1,15 @@
-using ECommerceAPI.Domain.Entities.Common;
+﻿using ECommerceAPI.Domain.Entities.Common;
 
 namespace ECommerceAPI.Application.Repositories;
 
-public interface IWriteRepository<T>: IRepository<T> where T : BaseEntity
+public interface IWriteRepository<T> : IRepository<T> where T : BaseEntity
 {
     Task<bool> AddAsync(T model);
-    Task<bool> AddRangeAsync(List<T> model);
+    Task<bool> AddRangeAsync(List<T> data);
     bool Remove(T model);
-    Task<bool> RemoveAsync(string id);
     bool RemoveRange(List<T> data);
+    Task<bool> RemoveAsync(string id);
     bool Update(T model);
-    Task<int> SaveAsync();
 
+    Task<int> SaveAsync();
 }

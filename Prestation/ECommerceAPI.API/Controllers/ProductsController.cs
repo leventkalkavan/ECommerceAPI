@@ -1,17 +1,15 @@
-using System;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 using ECommerceAPI.Application.Abstractions.Storage;
-using ECommerceAPI.Application.Repositories;
+using ECommerceAPI.Application.Repositories.File;
+using ECommerceAPI.Application.Repositories.InvoiceFile;
+using ECommerceAPI.Application.Repositories.Product;
+using ECommerceAPI.Application.Repositories.ProductImageFile;
 using ECommerceAPI.Application.RequestParameters;
 using ECommerceAPI.Application.ViewModels.Products;
 using ECommerceAPI.Domain.Entities;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using ECommerceAPI.Application.File;
-using ECommerceAPI.Application.InvoiceFile;
-using ECommerceAPI.Application.ProductImageFile;
-using ECommerceAPI.Application.Repositories.ProductRepository;
 
 namespace ECommerceAPI.API.Controllers
 {
@@ -105,23 +103,12 @@ namespace ECommerceAPI.API.Controllers
             return Ok();
         }
         [HttpPost("[action]")]
-        public async Task<IActionResult> Upload(string id)
+        public async Task<IActionResult> UploadFolder(string id)
         {
             List<(string fileName, string pathOrContainerName)> result = await _storageService.UploadAsync("photo-images", Request.Form.Files);
 
 
             Product product = await _productReadRepository.GetByIdAsync(id);
-
-            //foreach (var r in result)
-            //{
-            //    product.ProductImageFiles.Add(new()
-            //    {
-            //        FileName = r.fileName,
-            //        Path = r.pathOrContainerName,
-            //        Storage = _storageService.StorageName,
-            //        Products = new List<Product>() { product }
-            //    });
-            //}
 
             await _productImageFileWriteRepository.AddRangeAsync(result.Select(r => new ProductImageFile
             {

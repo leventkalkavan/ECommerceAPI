@@ -1,36 +1,8 @@
 {
   "Files": [
     {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/indir.jpeg",
-      "PackagePath": "staticwebassets/files/indir.jpeg"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/ornek-2.jpg",
-      "PackagePath": "staticwebassets/files/ornek-2.jpg"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/files/ornek.jpg",
-      "PackagePath": "staticwebassets/files/ornek.jpg"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/8675035icfluenteditregularicon-2.png",
-      "PackagePath": "staticwebassets/resource/product-images/8675035icfluenteditregularicon-2.png"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/8675035icfluenteditregularicon-3.png",
-      "PackagePath": "staticwebassets/resource/product-images/8675035icfluenteditregularicon-3.png"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/8675035icfluenteditregularicon.png",
-      "PackagePath": "staticwebassets/resource/product-images/8675035icfluenteditregularicon.png"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/indir-2.jpeg",
-      "PackagePath": "staticwebassets/resource/product-images/indir-2.jpeg"
-    },
-    {
-      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/resource/product-images/indir.jpeg",
-      "PackagePath": "staticwebassets/resource/product-images/indir.jpeg"
+      "Id": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/wwwroot/photo-images/ornek.jpg",
+      "PackagePath": "staticwebassets/photo-images/ornek.jpg"
     },
     {
       "Id": "obj/Debug/net7.0/staticwebassets/msbuild.ECommerceAPI.API.Microsoft.AspNetCore.StaticWebAssets.props",

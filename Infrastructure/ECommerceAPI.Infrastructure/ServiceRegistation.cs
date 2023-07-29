@@ -1,10 +1,8 @@
 using ECommerceAPI.Application.Abstractions.Storage;
-using ECommerceAPI.Application.Abstractions.Storage.Azure;
-using ECommerceAPI.Infrastructure.Storage;
 using ECommerceAPI.Infrastructure.Enums;
 using ECommerceAPI.Infrastructure.Services.Local;
 using ECommerceAPI.Infrastructure.Services.Storage;
-using ECommerceAPI.Infrastructure.Storage.Azure;
+using ECommerceAPI.Infrastructure.Services.Storage.Azure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ECommerceAPI.Infrastructure;
@@ -15,7 +13,7 @@ public static class ServiceRegistation
     {
         serviceCollection.AddScoped<IStorageService, StorageService>();
     }
-    public static void AddStorage<T>(this IServiceCollection serviceCollection) where T : Services.Storage.Storage, IStorage
+    public static void AddStorage<T>(this IServiceCollection serviceCollection) where T : Storage, IStorage
     {
         serviceCollection.AddScoped<IStorage, T>();
     }
