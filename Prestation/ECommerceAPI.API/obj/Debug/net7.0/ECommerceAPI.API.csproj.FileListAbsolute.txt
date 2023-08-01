@@ -287,3 +287,5 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Azure.Storage.Blobs.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Azure.Storage.Common.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/System.IO.Hashing.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/MediatR.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/MediatR.Extensions.Microsoft.DependencyInjection.dll

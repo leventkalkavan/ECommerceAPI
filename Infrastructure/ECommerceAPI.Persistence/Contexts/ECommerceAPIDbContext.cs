@@ -20,7 +20,7 @@ public class ECommerceAPIDbContext : DbContext
     {
         var datas = ChangeTracker
             .Entries<BaseEntity>();
-
+ 
         foreach (var data in datas)
         {
             _ = data.State switch
