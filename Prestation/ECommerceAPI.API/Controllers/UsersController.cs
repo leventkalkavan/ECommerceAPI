@@ -40,7 +40,7 @@ namespace ECommerceAPI.API.Controllers
             var result = await _mediator.Send(query);
             return Ok(result);
         }
-
+//test
         [HttpDelete("{Id}")]
         public async Task<IActionResult> DeleteUser([FromRoute]DeleteUserCommandRequest req)
         {
