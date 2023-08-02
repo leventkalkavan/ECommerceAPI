@@ -1,7 +1,8 @@
+using ECommerceAPI.Application.Features.Product.Commands.DeleteProduct;
 using ECommerceAPI.Application.Repositories.Product;
 using MediatR;
 
-namespace ECommerceAPI.Application.Features.Product.Commands.DeleteProduct;
+namespace ECommerceAPI.Application.Features.Commands.Product.DeleteProduct;
 
 public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest,DeleteProductCommandResponse>
 {

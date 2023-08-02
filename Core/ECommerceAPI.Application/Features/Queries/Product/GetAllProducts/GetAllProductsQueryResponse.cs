@@ -1,5 +1,5 @@
 
-namespace ECommerceAPI.Application.Features.Product.Queries.GetAllProducts;
+namespace ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
 
 public class GetAllProductsQueryResponse
 {

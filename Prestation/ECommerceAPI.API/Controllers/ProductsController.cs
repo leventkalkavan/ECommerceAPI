@@ -10,6 +10,7 @@ using ECommerceAPI.Application.Features.Commands.UpdateProduct;
 using ECommerceAPI.Application.Features.Product.Commands.DeleteProduct;
 using ECommerceAPI.Application.Features.Product.Commands.UpdateProduct;
 using ECommerceAPI.Application.Features.Product.Queries.GetAllProducts;
+using ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
 using ECommerceAPI.Application.Features.Queries.Product.GetByIdProduct;
 using ECommerceAPI.Application.Features.Queries.ProductImageFile.GetProductImages;
 using ECommerceAPI.Application.Repositories.File;

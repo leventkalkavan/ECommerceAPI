@@ -1,3 +1,4 @@
+using ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
 using MediatR;
 
 namespace ECommerceAPI.Application.Features.Product.Queries.GetAllProducts;

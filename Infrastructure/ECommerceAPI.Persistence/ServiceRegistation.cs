@@ -4,6 +4,7 @@ using ECommerceAPI.Application.Repositories.InvoiceFile;
 using ECommerceAPI.Application.Repositories.Order;
 using ECommerceAPI.Application.Repositories.Product;
 using ECommerceAPI.Application.Repositories.ProductImageFile;
+using ECommerceAPI.Domain.Entities.Identity;
 using ECommerceAPI.Persistence.Contexts;
 using ECommerceAPI.Persistence.Repositories.CustomerRepository;
 using ECommerceAPI.Persistence.Repositories.FileRepositories;
@@ -23,6 +24,14 @@ public static class ServiceRegistation
     public static void AddPersistenceServices(this IServiceCollection services)
     {
         services.AddDbContext<ECommerceAPIDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString));
+        services.AddIdentity<AppUser, AppRole>(options =>
+        {
+            options.Password.RequiredLength = 3;
+            options.Password.RequireNonAlphanumeric = false;
+            options.Password.RequireDigit = false;
+            options.Password.RequireLowercase = false;
+            options.Password.RequireUppercase = false;
+        }).AddEntityFrameworkStores<ECommerceAPIDbContext>();
         services.AddScoped<ICustomerReadRepository, CustomerReadRepository>();
         services.AddScoped<ICustomerWriteRepository, CustomerWriteRepository>();
         services.AddScoped<IOrderReadRepository, OrderReadRepository>();
