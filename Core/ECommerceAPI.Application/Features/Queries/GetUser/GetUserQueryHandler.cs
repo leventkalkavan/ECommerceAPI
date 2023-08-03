@@ -1,5 +1,6 @@
 using System.Security.Claims;
 using ECommerceAPI.Application.DTOs;
+using ECommerceAPI.Application.DTOs.User;
 using ECommerceAPI.Domain.Entities.Identity;
 using MediatR;
 using Microsoft.AspNetCore.Identity;

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ECommerceAPI.Application.Features.Commands.AppUser.CreateAppUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.CreateUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.DeleteUser;
+using ECommerceAPI.Application.Features.Commands.AppUser.LoginUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.UpdateUser;
 using ECommerceAPI.Application.Features.Queries.GetUser;
 using ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
@@ -52,6 +53,13 @@ namespace ECommerceAPI.API.Controllers
         public async Task<IActionResult> UpdateUser([FromBody]UpdateUserCommandRequest req)
         {
             UpdateUserCommandResponse res = await _mediator.Send(req);
+            return Ok(res);
+        }
+
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Login(LoginUserCommandRequest req)
+        {
+            LoginUserCommandResponse res = await _mediator.Send(req);
             return Ok(res);
         }
     }

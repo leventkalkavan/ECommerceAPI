@@ -20,7 +20,7 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommandRequest
             return new UpdateUserCommandResponse
             {
                 IsSuccess = false,
-                Message = "Kullanıcı bulunamadı."
+                Message = "Kullanici bulunamadı."
             };
         }
         user.UserName = request.UserName;

@@ -1,4 +1,5 @@
 using ECommerceAPI.Application.DTOs;
+using ECommerceAPI.Application.DTOs.User;
 using ECommerceAPI.Domain.Entities.Identity;
 using MediatR;
 
