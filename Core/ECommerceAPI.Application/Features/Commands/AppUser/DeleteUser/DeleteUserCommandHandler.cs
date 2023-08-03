@@ -17,7 +17,7 @@ public class DeleteUserCommandHandler: IRequestHandler<DeleteUserCommandRequest,
         var user = await _userManager.FindByIdAsync(request.Id);
         if (user == null)
         {
-            return new DeleteUserCommandResponse
+            return new ()
             {
                 IsSuccess = false,
                 Message = "Kullanici bulunamadi."

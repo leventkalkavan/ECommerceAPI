@@ -20,12 +20,14 @@ using ECommerceAPI.Application.Repositories.ProductImageFile;
 using ECommerceAPI.Application.RequestParameters;
 using ECommerceAPI.Domain.Entities;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ECommerceAPI.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = "Admin")]
     public class ProductsController : ControllerBase
     {
         readonly private IProductWriteRepository _productWriteRepository;

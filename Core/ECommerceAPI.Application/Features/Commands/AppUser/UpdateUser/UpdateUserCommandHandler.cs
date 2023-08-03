@@ -17,7 +17,7 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommandRequest
         var user = await _userManager.FindByIdAsync(request.Id);
         if (user == null)
         {
-            return new UpdateUserCommandResponse
+            return new ()
             {
                 IsSuccess = false,
                 Message = "Kullanici bulunamadı."

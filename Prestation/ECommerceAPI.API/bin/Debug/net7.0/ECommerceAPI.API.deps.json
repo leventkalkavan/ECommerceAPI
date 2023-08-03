@@ -11,6 +11,7 @@
           "ECommerceAPI.Application": "1.0.0",
           "ECommerceAPI.Infrastructure": "1.0.0",
           "ECommerceAPI.Persistence": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.9",
           "Microsoft.AspNetCore.OpenApi": "7.0.5",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "7.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
@@ -194,6 +195,17 @@
           "Microsoft.AspNetCore.Authentication.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Http": "2.2.0",
           "Microsoft.AspNetCore.Http.Extensions": "2.2.0"
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.9": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "6.21.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll": {
+            "assemblyVersion": "7.0.9.0",
+            "fileVersion": "7.0.923.32110"
+          }
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/7.0.0": {},
@@ -2652,7 +2664,8 @@
       "ECommerceAPI.Infrastructure/1.0.0": {
         "dependencies": {
           "Azure.Storage.Blobs": "12.17.0",
-          "ECommerceAPI.Application": "1.0.0"
+          "ECommerceAPI.Application": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "7.0.9"
         },
         "runtime": {
           "ECommerceAPI.Infrastructure.dll": {}
@@ -2798,6 +2811,13 @@
       "sha512": "sha512-XlVJzJ5wPOYW+Y0J6Q/LVTEyfS4ssLXmt60T0SPP+D8abVhBTl+cgw2gDHlyKYIkcJg7btMVh383NDkMVqD/fg==",
       "path": "microsoft.aspnetcore.authentication.core/2.2.0",
       "hashPath": "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.JwtBearer/7.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sqrvj8x9e7i7QD+q4SJ0iR0rlA6az8WJl7oO5mS9lmgOaIwKKf8MEzcF5XWf/Yk6CA4akH3SnH0JB4+huKUPNg==",
+      "path": "microsoft.aspnetcore.authentication.jwtbearer/7.0.9",
+      "hashPath": "microsoft.aspnetcore.authentication.jwtbearer.7.0.9.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/7.0.0": {
       "type": "package",

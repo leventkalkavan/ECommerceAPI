@@ -290,3 +290,4 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/MediatR.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/MediatR.Extensions.Microsoft.DependencyInjection.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll

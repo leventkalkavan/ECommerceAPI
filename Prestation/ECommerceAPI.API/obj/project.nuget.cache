@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8I1mi7G4GQgpoeKSjHiI9pqQDoClbdGX08S1aKODv0OhAjfJTEqrzYj/91ZubqNMcu2CgEvyrx16sYGr0tQjoA==",
+  "dgSpecHash": "vSJ86MUr1waXUcvw3522njPTe3eDNuqUO58DWjDgOUsx4ybNvioauC+BlGqwIsYbrLE7L00thZ5dZ8ZdgEOxpA==",
   "success": true,
   "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/ECommerceAPI.API.csproj",
   "expectedPackageFiles": [
@@ -21,6 +21,7 @@
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.authentication.cookies/2.2.0/microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.9/microsoft.aspnetcore.authentication.jwtbearer.7.0.9.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.cryptography.internal/7.0.0/microsoft.aspnetcore.cryptography.internal.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/7.0.0/microsoft.aspnetcore.cryptography.keyderivation.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.dataprotection/2.2.0/microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

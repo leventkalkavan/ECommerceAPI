@@ -6,37 +6,37 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' "/>
-    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' "/>
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5"/>
-        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.0"/>
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.9" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\..\Core\ECommerceAPI.Application\ECommerceAPI.Application.csproj">
             <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
         </ProjectReference>
-        <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Infrastructure\ECommerceAPI.Infrastructure.csproj"/>
-        <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Persistence\ECommerceAPI.Persistence.csproj"/>
+        <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Infrastructure\ECommerceAPI.Infrastructure.csproj" />
+        <ProjectReference Include="..\..\Infrastructure\ECommerceAPI.Persistence\ECommerceAPI.Persistence.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Controllers\"/>
-        <Folder Include="wwwroot\"/>
-        <Folder Include="wwwroot\files\"/>
+        <Folder Include="Controllers\" />
+        <Folder Include="wwwroot\" />
     </ItemGroup>
 
     <ItemGroup>
-        <Content Remove="wwwroot\resource\product-images\746255960.png"/>
+        <Content Remove="wwwroot\resource\product-images\746255960.png" />
     </ItemGroup>
 
     <ItemGroup>
-        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-2.png"/>
-        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-3.png"/>
-        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon.png"/>
-        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir-2.jpeg"/>
-        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir.jpeg"/>
+        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-2.png" />
+        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon-3.png" />
+        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\8675035icfluenteditregularicon.png" />
+        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir-2.jpeg" />
+        <_ContentIncludedByDefault Remove="wwwroot\resource\product-images\indir.jpeg" />
     </ItemGroup>
 </Project>
