@@ -34,28 +34,6 @@ namespace ECommerceAPI.API.Controllers
             return Ok(res);
         }
         
-        [HttpGet]
-        public async Task<ActionResult<GetUserQueryResponse>> GetAllUsers()
-        {
-            var query = new GetUserQueryRequest();
-            var result = await _mediator.Send(query);
-            return Ok(result);
-        }
-//test
-        [HttpDelete("{Id}")]
-        public async Task<IActionResult> DeleteUser([FromRoute]DeleteUserCommandRequest req)
-        {
-            DeleteUserCommandResponse result = await _mediator.Send(req);
-            return Ok(result);
-        }
-
-        [HttpPut]
-        public async Task<IActionResult> UpdateUser([FromBody]UpdateUserCommandRequest req)
-        {
-            UpdateUserCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
-        }
-
         [HttpPost("[action]")]
         public async Task<IActionResult> Login(LoginUserCommandRequest req)
         {
