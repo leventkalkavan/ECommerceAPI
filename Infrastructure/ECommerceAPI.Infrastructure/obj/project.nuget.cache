@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "zLYNvbj5IldCftivgdhu33peubpgFbO7vp65iYVrEsUcq1jJS2FpHyNss2iFvGDcmtLDwNa02bLKB4UX9qRhTA==",
+  "dgSpecHash": "ftIgdF1uyBx19F2FX6j7IRR/lytvSBcdMsF1A27SMFKacQX1jIDGpsd4aEU+xU5VU5+AS6NTITKE5w85VdRZdA==",
   "success": true,
   "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,9 @@
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/google.apis/1.61.0/google.apis.1.61.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/google.apis.auth/1.61.0/google.apis.auth.1.61.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/google.apis.core/1.61.0/google.apis.core.1.61.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/mediatr/7.0.0/mediatr.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/7.0.0/mediatr.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
@@ -60,6 +63,7 @@
     "/Users/leventkalkavan/.nuget/packages/microsoft.netcore.platforms/2.0.0/microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.netcore.targets/1.1.0/microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.win32.registry/4.5.0/microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl/4.3.2/runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",

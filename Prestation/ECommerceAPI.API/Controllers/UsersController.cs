@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ECommerceAPI.Application.Features.Commands.AppUser.CreateAppUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.CreateUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.DeleteUser;
+using ECommerceAPI.Application.Features.Commands.AppUser.GoogleLogin;
 using ECommerceAPI.Application.Features.Commands.AppUser.LoginUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.UpdateUser;
 using ECommerceAPI.Application.Features.Queries.GetUser;
@@ -40,5 +41,12 @@ namespace ECommerceAPI.API.Controllers
             LoginUserCommandResponse res = await _mediator.Send(req);
             return Ok(res);
         }
+
+        [HttpPost("google-login")]
+        public async Task<IActionResult> GoogleLogin(GoogleLoginCommandRequest req)
+        {
+            GoogleLoginCommandResponse res = await _mediator.Send(req);
+            return Ok(res);
+        } 
     }
 }
