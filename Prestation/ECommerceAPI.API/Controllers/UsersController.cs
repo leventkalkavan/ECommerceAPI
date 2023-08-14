@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ECommerceAPI.Application.Features.Commands.AppUser.CreateAppUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.CreateUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.DeleteUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.FacebookLogin;
