@@ -7,6 +7,7 @@ using ECommerceAPI.Application.Features.Commands.AppUser.DeleteUser;
 using ECommerceAPI.Application.Features.Commands.AppUser.FacebookLogin;
 using ECommerceAPI.Application.Features.Commands.AppUser.GoogleLogin;
 using ECommerceAPI.Application.Features.Commands.AppUser.LoginUser;
+using ECommerceAPI.Application.Features.Commands.AppUser.RefreshTokenLogin;
 using ECommerceAPI.Application.Features.Commands.AppUser.UpdateUser;
 using ECommerceAPI.Application.Features.Queries.GetUser;
 using ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
@@ -34,27 +35,6 @@ namespace ECommerceAPI.API.Controllers
         {
             CreateUserCommandResponse res = await _mediator.Send(createUserCommandRequest);
             return Ok(res);
-        }
-        
-        [HttpPost("[action]")]
-        public async Task<IActionResult> Login(LoginUserCommandRequest req)
-        {
-            LoginUserCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
-        }
-
-        [HttpPost("google-login")]
-        public async Task<IActionResult> GoogleLogin(GoogleLoginCommandRequest req)
-        {
-            GoogleLoginCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
-        }
-        
-        [HttpPost("facebook-login")]
-        public async Task<IActionResult> FacebookLogin(FacebookLoginCommandRequest facebookLoginCommandRequest)
-        {
-            FacebookLoginCommandResponse response = await _mediator.Send(facebookLoginCommandRequest);
-            return Ok(response);
         }
     }
 }

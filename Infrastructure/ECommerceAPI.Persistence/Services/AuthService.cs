@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using System.Text.Json;
 using ECommerceAPI.Application.Features.Commands.AppUser.LoginUser;
 using Google.Apis.Auth;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceAPI.Persistence.Services;
 
@@ -19,15 +20,17 @@ public class AuthService : IAuthService
     private readonly UserManager<AppUser> _userManager;
     private readonly ITokenHandler _tokenHandler;
     private readonly SignInManager<AppUser> _signInManager;
+    private readonly IUserService _userService;
 
     public AuthService(HttpClient httpClient, IConfiguration configuration, UserManager<AppUser> userManager,
-        ITokenHandler tokenHandler, SignInManager<AppUser> signInManager)
+        ITokenHandler tokenHandler, SignInManager<AppUser> signInManager, IUserService userService)
     {
         _httpClient = httpClient;
         _configuration = configuration;
         _userManager = userManager;
         _tokenHandler = tokenHandler;
         _signInManager = signInManager;
+        _userService = userService;
     }
 
     public async Task<Token> FacebookLoginAsync(string authToken)
@@ -80,6 +83,7 @@ public class AuthService : IAuthService
                 await _userManager.AddLoginAsync(user, info); //AspNetUserLogins
 
                 Token token = _tokenHandler.CreateAccessToken(5);
+                // burada refresh token ayarlarini yapabilirsin 
                 return token;
             }
         }
@@ -134,9 +138,24 @@ public class AuthService : IAuthService
         SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
         if (result.Succeeded) //authentication basarili
         {
-            Token token = _tokenHandler.CreateAccessToken(5);
+            Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime);
+            await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 5);
             return token;
         }
         throw new Exception("The user could not be found.");
+    }
+
+    public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
+    {
+       AppUser? appUser = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
+
+       if (appUser != null && appUser?.RefreshTokenTime > DateTime.UtcNow)
+       {
+           Token token = _tokenHandler.CreateAccessToken(15);
+           _userService.UpdateRefreshToken(token.RefreshToken, appUser,token.Expiration,15);
+           return token;
+       }
+       else
+           throw new Exception();
     }
 }

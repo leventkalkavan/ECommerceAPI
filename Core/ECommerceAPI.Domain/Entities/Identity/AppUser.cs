@@ -5,4 +5,6 @@ namespace ECommerceAPI.Domain.Entities.Identity;
 public class AppUser : IdentityUser
 {
     public string NameSurname { get; set; }
+    public string? RefreshToken { get; set; }
+    public DateTime RefreshTokenTime { get; set; }
 }

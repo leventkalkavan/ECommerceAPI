@@ -34,4 +34,17 @@ public class UserService: IUserService
                 response.Message += $"{error.Code} - {error.Description}/n";
         return response;
     }
+
+    public async Task UpdateRefreshToken(string refreshToken, AppUser user, DateTime accessTokenDate, int refreshTokenDate)
+    {
+        AppUser appUser = await _userManager.FindByIdAsync(user.Id);
+        if (appUser != null)
+        {
+            appUser.RefreshToken = refreshToken;
+            appUser.RefreshTokenTime = accessTokenDate.AddSeconds(refreshTokenDate);
+            await _userManager.UpdateAsync(appUser);
+        }
+        else
+        throw new Exception();
+    }
 }
