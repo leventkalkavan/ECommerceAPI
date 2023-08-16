@@ -82,7 +82,7 @@ public class AuthService : IAuthService
             {
                 await _userManager.AddLoginAsync(user, info); //AspNetUserLogins
 
-                Token token = _tokenHandler.CreateAccessToken(5);
+                Token token = _tokenHandler.CreateAccessToken(5,user);
                 // burada refresh token ayarlarini yapabilirsin 
                 return token;
             }
@@ -126,7 +126,7 @@ public class AuthService : IAuthService
         else
             throw new Exception("Invalid external authentication.");
 
-        Token token = _tokenHandler.CreateAccessToken(5);
+        Token token = _tokenHandler.CreateAccessToken(5,user);
         return token;
     }
 
@@ -138,7 +138,7 @@ public class AuthService : IAuthService
         SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
         if (result.Succeeded) //authentication basarili
         {
-            Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime);
+            Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
             await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 5);
             return token;
         }
@@ -147,12 +147,12 @@ public class AuthService : IAuthService
 
     public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
     {
-       AppUser? appUser = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
+       AppUser? user = await _userManager.Users.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
 
-       if (appUser != null && appUser?.RefreshTokenTime > DateTime.UtcNow)
+       if (user != null && user?.RefreshTokenTime > DateTime.UtcNow)
        {
-           Token token = _tokenHandler.CreateAccessToken(15);
-           _userService.UpdateRefreshToken(token.RefreshToken, appUser,token.Expiration,15);
+           Token token = _tokenHandler.CreateAccessToken(15, user);
+           _userService.UpdateRefreshToken(token.RefreshToken, user,token.Expiration,15);
            return token;
        }
        else

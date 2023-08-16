@@ -1,5 +1,9 @@
 ﻿
+using System.Collections.ObjectModel;
+using System.Data;
+using System.Security.Claims;
 using System.Text;
+using ECommerceAPI.API.Configurations;
 using ECommerceAPI.Application;
 using ECommerceAPI.Application.Validations.Product;
 using ECommerceAPI.Infrastructure;
@@ -8,7 +12,13 @@ using ECommerceAPI.Infrastructure.Services.Storage.Azure;
 using ECommerceAPI.Persistence;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
+using Serilog.Context;
+using Serilog.Core;
+using Serilog.Events;
+using Serilog.Sinks.MSSqlServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,11 +56,46 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidIssuer = builder.Configuration["Token:Issuer"],
         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.
             GetBytes(builder.Configuration["Token:SecurityKey"])),
-        LifetimeValidator = (notBefore,expires,securityToken,validationsParameters)=> 
-            expires != null ? expires > DateTime.UtcNow: false 
+        LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
+        NameClaimType = ClaimTypes.Name
     };
 });
+SqlColumn sqlColumn = new SqlColumn();
+sqlColumn.ColumnName = "Username";
+sqlColumn.DataType = SqlDbType.NVarChar;
+sqlColumn.PropertyName = "Username";
+sqlColumn.DataLength = 50;
+sqlColumn.AllowNull = true;
+ColumnOptions columnOpt = new ColumnOptions();
+columnOpt.Store.Remove(StandardColumn.Properties);
+columnOpt.Store.Add(StandardColumn.LogEvent);
+columnOpt.AdditionalColumns = new Collection<SqlColumn> { sqlColumn};
+Logger log = new LoggerConfiguration()
+    .WriteTo.Console()
+    .WriteTo.File("logs/log.txt")
+    .WriteTo.MSSqlServer(connectionString: builder.Configuration.GetConnectionString("Mssql"), 
+        sinkOptions: new MSSqlServerSinkOptions
+        {
+            AutoCreateSqlTable = true,
+            TableName = "logs",
+        },
+        appConfiguration: null,
+        columnOptions: columnOpt
+    )
+    .Enrich.FromLogContext()
+    .Enrich.With<UsernameColumnOptions>()
+    .MinimumLevel.Information()
+    .CreateLogger();
+builder.Host.UseSerilog(log);
 
+builder.Services.AddHttpLogging(logging =>
+{
+    logging.LoggingFields = HttpLoggingFields.All;
+    logging.RequestHeaders.Add("sec-ch-ua");
+    logging.MediaTypeOptions.AddText("application/javascript");
+    logging.RequestBodyLogLimit = 4096;
+    logging.ResponseBodyLogLimit = 4096;
+});
     builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -62,6 +107,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSerilogRequestLogging();
+app.UseHttpLogging();
+app.Use(async (context, next) =>
+{
+    var username = context.User?.Identity?.IsAuthenticated != null || true ? context.User.Identity.Name : null;
+    LogContext.PushProperty("user_name", username);
+    await next();
+});
 app.UseStaticFiles();
 app.UseCors();
 app.UseHttpsRedirection();

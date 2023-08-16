@@ -1,7 +1,9 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using ECommerceAPI.Application.Abstractions.Token;
+using ECommerceAPI.Domain.Entities.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
@@ -17,7 +19,7 @@ public class TokenHandler: ITokenHandler
     }
 
     
-    public Application.DTOs.Token.Token CreateAccessToken(int second)
+    public Application.DTOs.Token.Token CreateAccessToken(int second, AppUser user)
     {
         Application.DTOs.Token.Token token = new();
 
@@ -34,7 +36,8 @@ public class TokenHandler: ITokenHandler
             issuer: _configuration["Token:Issuer"],
             expires: token.Expiration,
             notBefore: DateTime.UtcNow,
-            signingCredentials: signingCredentials
+            signingCredentials: signingCredentials,
+            claims: new List<Claim> { new(ClaimTypes.Name, user.UserName) }
         );
         
         // token olusturucu siniftan bir ornek alalım.

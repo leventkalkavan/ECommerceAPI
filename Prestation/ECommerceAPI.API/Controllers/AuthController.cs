@@ -16,34 +16,32 @@ namespace ECommerceAPI.API.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IMediator _mediator;
-
+        readonly IMediator _mediator;
         public AuthController(IMediator mediator)
         {
             _mediator = mediator;
         }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Login(LoginUserCommandRequest loginUserCommandRequest)
+        {
+            LoginUserCommandResponse response = await _mediator.Send(loginUserCommandRequest);
+            return Ok(response);
+        }
 
         [HttpPost("[action]")]
-        public async Task<IActionResult> Login(LoginUserCommandRequest req)
+        public async Task<IActionResult> RefreshTokenLogin([FromBody] RefreshTokenLoginCommandRequest refreshTokenLoginCommandRequest)
         {
-            LoginUserCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
-        }
-        
-        [HttpGet("[action]")]
-        public async Task<IActionResult> RefreshTokenLogin([FromForm]RefreshTokenLoginCommandRequest req)
-        {
-            RefreshTokenLoginCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
+            RefreshTokenLoginCommandResponse response = await _mediator.Send(refreshTokenLoginCommandRequest);
+            return Ok(response);
         }
 
         [HttpPost("google-login")]
-        public async Task<IActionResult> GoogleLogin(GoogleLoginCommandRequest req)
+        public async Task<IActionResult> GoogleLogin(GoogleLoginCommandRequest googleLoginCommandRequest)
         {
-            GoogleLoginCommandResponse res = await _mediator.Send(req);
-            return Ok(res);
+            GoogleLoginCommandResponse response = await _mediator.Send(googleLoginCommandRequest);
+            return Ok(response);
         }
-        
+
         [HttpPost("facebook-login")]
         public async Task<IActionResult> FacebookLogin(FacebookLoginCommandRequest facebookLoginCommandRequest)
         {

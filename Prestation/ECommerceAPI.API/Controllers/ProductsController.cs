@@ -42,7 +42,8 @@ namespace ECommerceAPI.API.Controllers
         readonly IStorageService _storageService;
         readonly IConfiguration configuration;
         readonly IMediator _mediator;
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, IWebHostEnvironment webHostEnvironment, IFileWriteRepository fileWriteRepository, IFileReadRepository fileReadRepository, IProductImageFileReadRepository productImageFileReadRepository, IProductImageFileWriteRepository productImageFileWriteRepository, IInvoiceFileReadRepository invoiceFileReadRepository, IInvoiceFileWriteRepository invoiceFileWriteRepository, IStorageService storageService, IConfiguration configuration,  IMediator mediator)
+        private readonly ILogger<ProductsController> _logger;
+        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, IWebHostEnvironment webHostEnvironment, IFileWriteRepository fileWriteRepository, IFileReadRepository fileReadRepository, IProductImageFileReadRepository productImageFileReadRepository, IProductImageFileWriteRepository productImageFileWriteRepository, IInvoiceFileReadRepository invoiceFileReadRepository, IInvoiceFileWriteRepository invoiceFileWriteRepository, IStorageService storageService, IConfiguration configuration,  IMediator mediator, ILogger<ProductsController> logger)
         {
             _productWriteRepository = productWriteRepository;
             _productReadRepository = productReadRepository;
@@ -56,11 +57,13 @@ namespace ECommerceAPI.API.Controllers
             _storageService = storageService;
             this.configuration = configuration;
             _mediator = mediator;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] GetAllProductsQueryRequest req)
         {
+            _logger.LogInformation("geldigelldigeldi");
             GetAllProductsQueryResponse res = await _mediator.Send(req);
             return Ok(res);
         }
