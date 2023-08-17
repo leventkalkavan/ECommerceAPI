@@ -15,7 +15,7 @@ public class RefreshTokenLoginCommandHandler: IRequestHandler<RefreshTokenLoginC
 
     public async Task<RefreshTokenLoginCommandResponse> Handle(RefreshTokenLoginCommandRequest request, CancellationToken cancellationToken)
     {
-        Token token= await _authService.RefreshTokenLoginAsync(request.RefresToken);
+        Token token= await _authService.RefreshTokenLoginAsync(request.RefreshToken);
         return new()
         {
             Token = token

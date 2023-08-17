@@ -11,7 +11,7 @@ namespace ECommerceAPI.Infrastructure.Services.Token;
 
 public class TokenHandler: ITokenHandler
 {
-    private readonly IConfiguration _configuration;
+    readonly IConfiguration _configuration;
 
     public TokenHandler(IConfiguration configuration)
     {
@@ -26,7 +26,7 @@ public class TokenHandler: ITokenHandler
         // security keyin simetrigini aliyoruz
         SymmetricSecurityKey securityKey = new(Encoding.UTF8.GetBytes(_configuration["Token:SecurityKey"]));
 
-        // sifrelenmis kimligi olusturuyorz
+        // sifrelenmis kimligi olusturuyor
         SigningCredentials signingCredentials = new(securityKey, SecurityAlgorithms.HmacSha256);
 
         // olusturulacak token ayarlarini veriyoruz
@@ -51,8 +51,8 @@ public class TokenHandler: ITokenHandler
     public string CreateRefreshToken()
     {
         byte[] number = new byte[32];
-        using RandomNumberGenerator randomNumberG = RandomNumberGenerator.Create();
-        randomNumberG.GetBytes(number);
+        using RandomNumberGenerator random = RandomNumberGenerator.Create();
+        random.GetBytes(number);
         return Convert.ToBase64String(number);
     }
 }

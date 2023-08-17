@@ -4,6 +4,7 @@ using System.Data;
 using System.Security.Claims;
 using System.Text;
 using ECommerceAPI.API.Configurations;
+using ECommerceAPI.API.Extensions;
 using ECommerceAPI.Application;
 using ECommerceAPI.Application.Validations.Product;
 using ECommerceAPI.Infrastructure;
@@ -106,7 +107,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.ConfigureExceptionHandler<Program>(app.Services.GetRequiredService<ILogger<Program>>());
 app.UseSerilogRequestLogging();
 app.UseHttpLogging();
 app.Use(async (context, next) =>
