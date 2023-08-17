@@ -3,18 +3,20 @@ using MediatR;
 
 namespace ECommerceAPI.Application.Features.Queries.Product.GetByIdProduct;
 
-public class GetByIdProductQueryHandler: IRequestHandler<GetByIdProductQueryRequest,GetByIdProductQueryResponse>
+public class GetByIdProductQueryHandler : IRequestHandler<GetByIdProductQueryRequest, GetByIdProductQueryResponse>
 {
-    readonly IProductReadRepository _productReadRepository;
+    private readonly IProductReadRepository _productReadRepository;
+
     public GetByIdProductQueryHandler(IProductReadRepository productReadRepository)
     {
         _productReadRepository = productReadRepository;
     }
 
-    public async Task<GetByIdProductQueryResponse> Handle(GetByIdProductQueryRequest request, CancellationToken cancellationToken)
+    public async Task<GetByIdProductQueryResponse> Handle(GetByIdProductQueryRequest request,
+        CancellationToken cancellationToken)
     {
-        Domain.Entities.Product product = await _productReadRepository.GetByIdAsync(request.Id, false);
-        return new()
+        var product = await _productReadRepository.GetByIdAsync(request.Id, false);
+        return new GetByIdProductQueryResponse
         {
             Name = product.Name,
             Price = product.Price,

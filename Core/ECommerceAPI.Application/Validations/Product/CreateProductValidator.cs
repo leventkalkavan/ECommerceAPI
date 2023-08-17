@@ -1,9 +1,6 @@
-
-using FluentValidation;
-
 namespace ECommerceAPI.Application.Validations.Product;
 
-public class CreateProductValidator 
+public class CreateProductValidator
 {
     // public CreateProductValidator()
     // {

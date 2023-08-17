@@ -21,10 +21,11 @@ public static class ConfigureExceptionHandlerExtension
                     logger.LogError(contextFeature.Error.Message);
                     await context.Response.WriteAsync(JsonSerializer.Serialize(new
                     {
-                        StatusCode = context.Response.StatusCode,
-                        Message = contextFeature.Error.Message,
+                        context.Response.StatusCode,
+                        contextFeature.Error.Message,
                         Title = "Hata!"
-                    })); ;
+                    }));
+                    ;
                 }
             });
         });

@@ -17,7 +17,6 @@ using ECommerceAPI.Persistence.Repositories.ProductImageRepositories;
 using ECommerceAPI.Persistence.Repositories.ProductRepositories;
 using ECommerceAPI.Persistence.Services;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ECommerceAPI.Persistence;
@@ -26,7 +25,8 @@ public static class ServiceRegistation
 {
     public static void AddPersistenceServices(this IServiceCollection services)
     {
-        services.AddDbContext<ECommerceAPIDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString));
+        services.AddDbContext<ECommerceAPIDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString));
         services.AddIdentity<AppUser, AppRole>(options =>
         {
             options.Password.RequiredLength = 3;

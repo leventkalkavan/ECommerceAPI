@@ -1,5 +1,3 @@
-using MediatR;
-
 namespace ECommerceAPI.Application.Features.Queries.ProductImageFile.GetProductImages;
 
 public class GetProductImagesQueryResponse

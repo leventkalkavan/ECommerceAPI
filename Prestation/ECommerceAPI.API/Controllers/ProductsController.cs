@@ -1,6 +1,3 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Net;
 using ECommerceAPI.Application.Abstractions.Storage;
 using ECommerceAPI.Application.Features.Commands.Product.CreateProduct;
@@ -8,114 +5,117 @@ using ECommerceAPI.Application.Features.Commands.ProductImageFile.DeleteProductI
 using ECommerceAPI.Application.Features.Commands.ProductImageFile.UploadImageFile;
 using ECommerceAPI.Application.Features.Commands.UpdateProduct;
 using ECommerceAPI.Application.Features.Product.Commands.DeleteProduct;
-using ECommerceAPI.Application.Features.Product.Commands.UpdateProduct;
 using ECommerceAPI.Application.Features.Product.Queries.GetAllProducts;
-using ECommerceAPI.Application.Features.Queries.Product.GetAllProducts;
 using ECommerceAPI.Application.Features.Queries.Product.GetByIdProduct;
 using ECommerceAPI.Application.Features.Queries.ProductImageFile.GetProductImages;
 using ECommerceAPI.Application.Repositories.File;
 using ECommerceAPI.Application.Repositories.InvoiceFile;
 using ECommerceAPI.Application.Repositories.Product;
 using ECommerceAPI.Application.Repositories.ProductImageFile;
-using ECommerceAPI.Application.RequestParameters;
-using ECommerceAPI.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 
-namespace ECommerceAPI.API.Controllers
+namespace ECommerceAPI.API.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+[Authorize(AuthenticationSchemes = "Admin")]
+public class ProductsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    [Authorize(AuthenticationSchemes = "Admin")]
-    public class ProductsController : ControllerBase
+    private readonly IFileReadRepository _fileReadRepository;
+    private readonly IFileWriteRepository _fileWriteRepository;
+    private readonly IInvoiceFileReadRepository _invoiceFileReadRepository;
+    private readonly IInvoiceFileWriteRepository _invoiceFileWriteRepository;
+    private readonly ILogger<ProductsController> _logger;
+    private readonly IMediator _mediator;
+    private readonly IProductImageFileReadRepository _productImageFileReadRepository;
+    private readonly IProductImageFileWriteRepository _productImageFileWriteRepository;
+    private readonly IProductReadRepository _productReadRepository;
+    private readonly IProductWriteRepository _productWriteRepository;
+    private readonly IStorageService _storageService;
+    private readonly IWebHostEnvironment _webHostEnvironment;
+    private readonly IConfiguration configuration;
+
+    public ProductsController(IProductWriteRepository productWriteRepository,
+        IProductReadRepository productReadRepository, IWebHostEnvironment webHostEnvironment,
+        IFileWriteRepository fileWriteRepository, IFileReadRepository fileReadRepository,
+        IProductImageFileReadRepository productImageFileReadRepository,
+        IProductImageFileWriteRepository productImageFileWriteRepository,
+        IInvoiceFileReadRepository invoiceFileReadRepository, IInvoiceFileWriteRepository invoiceFileWriteRepository,
+        IStorageService storageService, IConfiguration configuration, IMediator mediator,
+        ILogger<ProductsController> logger)
     {
-        readonly private IProductWriteRepository _productWriteRepository;
-        readonly private IProductReadRepository _productReadRepository;
-        private readonly IWebHostEnvironment _webHostEnvironment;
-        readonly IFileWriteRepository _fileWriteRepository;
-        readonly IFileReadRepository _fileReadRepository;
-        readonly IProductImageFileReadRepository _productImageFileReadRepository;
-        readonly IProductImageFileWriteRepository _productImageFileWriteRepository;
-        readonly IInvoiceFileReadRepository _invoiceFileReadRepository;
-        readonly IInvoiceFileWriteRepository _invoiceFileWriteRepository;
-        readonly IStorageService _storageService;
-        readonly IConfiguration configuration;
-        readonly IMediator _mediator;
-        private readonly ILogger<ProductsController> _logger;
-        public ProductsController(IProductWriteRepository productWriteRepository, IProductReadRepository productReadRepository, IWebHostEnvironment webHostEnvironment, IFileWriteRepository fileWriteRepository, IFileReadRepository fileReadRepository, IProductImageFileReadRepository productImageFileReadRepository, IProductImageFileWriteRepository productImageFileWriteRepository, IInvoiceFileReadRepository invoiceFileReadRepository, IInvoiceFileWriteRepository invoiceFileWriteRepository, IStorageService storageService, IConfiguration configuration,  IMediator mediator, ILogger<ProductsController> logger)
-        {
-            _productWriteRepository = productWriteRepository;
-            _productReadRepository = productReadRepository;
-            _webHostEnvironment = webHostEnvironment;
-            _fileWriteRepository = fileWriteRepository;
-            _fileReadRepository = fileReadRepository;
-            _productImageFileReadRepository = productImageFileReadRepository;
-            _productImageFileWriteRepository = productImageFileWriteRepository;
-            _invoiceFileReadRepository = invoiceFileReadRepository;
-            _invoiceFileWriteRepository = invoiceFileWriteRepository;
-            _storageService = storageService;
-            this.configuration = configuration;
-            _mediator = mediator;
-            _logger = logger;
-        }
+        _productWriteRepository = productWriteRepository;
+        _productReadRepository = productReadRepository;
+        _webHostEnvironment = webHostEnvironment;
+        _fileWriteRepository = fileWriteRepository;
+        _fileReadRepository = fileReadRepository;
+        _productImageFileReadRepository = productImageFileReadRepository;
+        _productImageFileWriteRepository = productImageFileWriteRepository;
+        _invoiceFileReadRepository = invoiceFileReadRepository;
+        _invoiceFileWriteRepository = invoiceFileWriteRepository;
+        _storageService = storageService;
+        this.configuration = configuration;
+        _mediator = mediator;
+        _logger = logger;
+    }
 
-        [HttpGet]
-        public async Task<IActionResult> Get([FromQuery] GetAllProductsQueryRequest req)
-        {
-            _logger.LogInformation("geldigelldigeldi");
-            GetAllProductsQueryResponse res = await _mediator.Send(req);
-            return Ok(res);
-        }
+    [HttpGet]
+    public async Task<IActionResult> Get([FromQuery] GetAllProductsQueryRequest req)
+    {
+        _logger.LogInformation("geldigelldigeldi");
+        var res = await _mediator.Send(req);
+        return Ok(res);
+    }
 
-        [HttpGet("{Id}")]
-        public async Task<IActionResult> Get([FromRoute] GetByIdProductQueryRequest req)
-        {
-            GetByIdProductQueryResponse response = await _mediator.Send(req);
-            return Ok(response);
-        }
+    [HttpGet("{Id}")]
+    public async Task<IActionResult> Get([FromRoute] GetByIdProductQueryRequest req)
+    {
+        var response = await _mediator.Send(req);
+        return Ok(response);
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]CreateProductCommandRequest req)
-        {
-            CreateProductCommandResponse res = await _mediator.Send(req);
-            return StatusCode((int)HttpStatusCode.Created);
-        }
+    [HttpPost]
+    public async Task<IActionResult> Post([FromBody] CreateProductCommandRequest req)
+    {
+        var res = await _mediator.Send(req);
+        return StatusCode((int)HttpStatusCode.Created);
+    }
 
-         [HttpPut]
-         public async Task<IActionResult> Put([FromBody]UpdateProductCommandRequest req)
-         {
-             UpdateProductCommandResponse res = await _mediator.Send(req);
-             return StatusCode((int)HttpStatusCode.OK);
-         }
+    [HttpPut]
+    public async Task<IActionResult> Put([FromBody] UpdateProductCommandRequest req)
+    {
+        var res = await _mediator.Send(req);
+        return StatusCode((int)HttpStatusCode.OK);
+    }
 
-        [HttpDelete("{Id}")]
-        public async Task<IActionResult> Delete([FromRoute]DeleteProductCommandRequest req)
-        {
-            DeleteProductCommandResponse res = await _mediator.Send(req);
-            return Ok();
-        }
-        [HttpPost("[action]")]
-        public async Task<IActionResult> UploadFolder([FromQuery] UploadImageFileCommandRequest req)
-        {
-            req.Files = Request.Form.Files;
-            UploadImageFileCommandResponse res = await _mediator.Send(req);
-            return Ok();
-        }
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> Delete([FromRoute] DeleteProductCommandRequest req)
+    {
+        var res = await _mediator.Send(req);
+        return Ok();
+    }
 
-        [HttpGet("[action]/{Id}")]
-        public async Task<IActionResult> GetProductImages([FromRoute] GetProductImagesQueryRequest req)
-        {
-            List<GetProductImagesQueryResponse> response = await _mediator.Send(req);
-            return Ok(response);
-        }
-        
-        [HttpDelete("[action]/{Id}")]
-        public async Task<IActionResult> DeleteProductImage([FromRoute]DeleteProductImageCommandRequest req)
-        {
-            DeleteProductImageCommandResponse res = await _mediator.Send(req);
-            return Ok();
-        }
+    [HttpPost("[action]")]
+    public async Task<IActionResult> UploadFolder([FromQuery] UploadImageFileCommandRequest req)
+    {
+        req.Files = Request.Form.Files;
+        var res = await _mediator.Send(req);
+        return Ok();
+    }
 
+    [HttpGet("[action]/{Id}")]
+    public async Task<IActionResult> GetProductImages([FromRoute] GetProductImagesQueryRequest req)
+    {
+        var response = await _mediator.Send(req);
+        return Ok(response);
+    }
+
+    [HttpDelete("[action]/{Id}")]
+    public async Task<IActionResult> DeleteProductImage([FromRoute] DeleteProductImageCommandRequest req)
+    {
+        var res = await _mediator.Send(req);
+        return Ok();
     }
 }

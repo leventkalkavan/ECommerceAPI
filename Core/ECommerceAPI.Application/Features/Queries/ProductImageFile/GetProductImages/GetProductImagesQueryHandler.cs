@@ -1,4 +1,3 @@
-using ECommerceAPI.Application.Features.Queries.Product.GetByIdProduct;
 using ECommerceAPI.Application.Repositories.Product;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -6,10 +5,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace ECommerceAPI.Application.Features.Queries.ProductImageFile.GetProductImages;
 
-public class GetProductImagesQueryHandler : IRequestHandler<GetProductImagesQueryRequest, List<GetProductImagesQueryResponse>>
+public class
+    GetProductImagesQueryHandler : IRequestHandler<GetProductImagesQueryRequest, List<GetProductImagesQueryResponse>>
 {
     private readonly IProductReadRepository _productReadRepository;
-    
+
     private readonly IConfiguration configuration;
 
     public GetProductImagesQueryHandler(IProductReadRepository productReadRepository, IConfiguration configuration)
@@ -18,9 +18,10 @@ public class GetProductImagesQueryHandler : IRequestHandler<GetProductImagesQuer
         this.configuration = configuration;
     }
 
-    public async Task<List<GetProductImagesQueryResponse>?> Handle(GetProductImagesQueryRequest request, CancellationToken cancellationToken)
+    public async Task<List<GetProductImagesQueryResponse>?> Handle(GetProductImagesQueryRequest request,
+        CancellationToken cancellationToken)
     {
-        Domain.Entities.Product? product = await _productReadRepository.Table.Include(p => p.ProductImageFiles)
+        var product = await _productReadRepository.Table.Include(p => p.ProductImageFiles)
             .FirstOrDefaultAsync(p => p.Id == Guid.Parse(request.Id));
         return product?.ProductImageFiles.Select(p => new GetProductImagesQueryResponse
         {

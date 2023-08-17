@@ -1,10 +1,10 @@
 using ECommerceAPI.Application.Abstractions.Services;
-using ECommerceAPI.Application.DTOs.Token;
 using MediatR;
 
 namespace ECommerceAPI.Application.Features.Commands.AppUser.RefreshTokenLogin;
 
-public class RefreshTokenLoginCommandHandler: IRequestHandler<RefreshTokenLoginCommandRequest,RefreshTokenLoginCommandResponse>
+public class
+    RefreshTokenLoginCommandHandler : IRequestHandler<RefreshTokenLoginCommandRequest, RefreshTokenLoginCommandResponse>
 {
     private readonly IAuthService _authService;
 
@@ -13,10 +13,11 @@ public class RefreshTokenLoginCommandHandler: IRequestHandler<RefreshTokenLoginC
         _authService = authService;
     }
 
-    public async Task<RefreshTokenLoginCommandResponse> Handle(RefreshTokenLoginCommandRequest request, CancellationToken cancellationToken)
+    public async Task<RefreshTokenLoginCommandResponse> Handle(RefreshTokenLoginCommandRequest request,
+        CancellationToken cancellationToken)
     {
-        Token token= await _authService.RefreshTokenLoginAsync(request.RefreshToken);
-        return new()
+        var token = await _authService.RefreshTokenLoginAsync(request.RefreshToken);
+        return new RefreshTokenLoginCommandResponse
         {
             Token = token
         };

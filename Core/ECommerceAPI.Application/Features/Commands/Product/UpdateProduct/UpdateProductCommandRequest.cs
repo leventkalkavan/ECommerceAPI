@@ -1,5 +1,4 @@
 using ECommerceAPI.Application.Features.Product.Commands.UpdateProduct;
-using ECommerceAPI.Domain.Entities;
 using MediatR;
 
 namespace ECommerceAPI.Application.Features.Commands.UpdateProduct;

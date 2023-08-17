@@ -1,4 +1,3 @@
-using ECommerceAPI.Application.Features.Queries.Product.GetByIdProduct;
 using MediatR;
 
 namespace ECommerceAPI.Application.Features.Queries.ProductImageFile.GetProductImages;

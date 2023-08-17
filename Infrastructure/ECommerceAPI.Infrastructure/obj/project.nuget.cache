@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "ftIgdF1uyBx19F2FX6j7IRR/lytvSBcdMsF1A27SMFKacQX1jIDGpsd4aEU+xU5VU5+AS6NTITKE5w85VdRZdA==",
+  "dgSpecHash": "yFvH0cn8urjW7kTlZGJueazDrJnVMSupjEPrS5Cg3mm22Q+rDNUQjkGTHv4dcIPIj9tVL4657reR3UC0qs/j8w==",
   "success": true,
   "projectFilePath": "/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.Infrastructure/ECommerceAPI.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/leventkalkavan/.nuget/packages/azure.core/1.33.0/azure.core.1.33.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/azure.storage.blobs/12.17.0/azure.storage.blobs.12.17.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/azure.storage.common/12.16.0/azure.storage.common.12.16.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/facebook/7.0.6/facebook.7.0.6.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation/11.6.0/fluentvalidation.11.6.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.6.0/fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
@@ -26,7 +27,7 @@
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.dataprotection.abstractions/2.2.0/microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.hosting.abstractions/2.2.0/microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.hosting.server.abstractions/2.2.0/microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
-    "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.http/2.2.0/microsoft.aspnetcore.http.2.2.0.nupkg.sha512",
+    "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.http/2.2.2/microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.http.extensions/2.2.0/microsoft.aspnetcore.http.extensions.2.2.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
@@ -125,5 +126,16 @@
     "/Users/leventkalkavan/.nuget/packages/system.threading.tasks/4.3.0/system.threading.tasks.4.3.0.nupkg.sha512",
     "/Users/leventkalkavan/.nuget/packages/system.threading.tasks.extensions/4.5.4/system.threading.tasks.extensions.4.5.4.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Facebook 7.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Facebook",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

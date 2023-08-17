@@ -12,21 +12,20 @@ public class UpdateUserCommandHandler : IRequestHandler<UpdateUserCommandRequest
         _userManager = userManager;
     }
 
-    public async Task<UpdateUserCommandResponse> Handle(UpdateUserCommandRequest request, CancellationToken cancellationToken)
+    public async Task<UpdateUserCommandResponse> Handle(UpdateUserCommandRequest request,
+        CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByIdAsync(request.Id);
         if (user == null)
-        {
-            return new ()
+            return new UpdateUserCommandResponse
             {
                 IsSuccess = false,
                 Message = "Kullanici bulunamadı."
             };
-        }
         user.UserName = request.UserName;
         user.Email = request.Email;
 
-        IdentityResult result = await _userManager.UpdateAsync(user);
+        var result = await _userManager.UpdateAsync(user);
         UpdateUserCommandResponse response = new() { IsSuccess = result.Succeeded };
 
         if (result.Succeeded)

@@ -2,7 +2,7 @@ using MediatR;
 
 namespace ECommerceAPI.Application.Features.Commands.AppUser.CreateUser;
 
-public class CreateUserCommandRequest: IRequest<CreateUserCommandResponse>
+public class CreateUserCommandRequest : IRequest<CreateUserCommandResponse>
 {
     public string NameSurname { get; set; }
     public string UserName { get; set; }

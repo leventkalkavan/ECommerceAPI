@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace ECommerceAPI.Application.Features.Commands.AppUser.DeleteUser;
 
-public class DeleteUserCommandHandler: IRequestHandler<DeleteUserCommandRequest,DeleteUserCommandResponse>
+public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommandRequest, DeleteUserCommandResponse>
 {
     private readonly UserManager<Domain.Entities.Identity.AppUser> _userManager;
 
@@ -12,19 +12,18 @@ public class DeleteUserCommandHandler: IRequestHandler<DeleteUserCommandRequest,
         _userManager = userManager;
     }
 
-    public async Task<DeleteUserCommandResponse> Handle(DeleteUserCommandRequest request, CancellationToken cancellationToken)
+    public async Task<DeleteUserCommandResponse> Handle(DeleteUserCommandRequest request,
+        CancellationToken cancellationToken)
     {
         var user = await _userManager.FindByIdAsync(request.Id);
         if (user == null)
-        {
-            return new ()
+            return new DeleteUserCommandResponse
             {
                 IsSuccess = false,
                 Message = "Kullanici bulunamadi."
             };
-        }
-        
-        IdentityResult result = await _userManager.DeleteAsync(user);
+
+        var result = await _userManager.DeleteAsync(user);
         DeleteUserCommandResponse response = new() { IsSuccess = result.Succeeded };
         if (result.Succeeded)
             response.Message = "Kullanici basariyla silinmistir.";

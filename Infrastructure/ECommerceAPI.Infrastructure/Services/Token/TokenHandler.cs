@@ -9,16 +9,16 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerceAPI.Infrastructure.Services.Token;
 
-public class TokenHandler: ITokenHandler
+public class TokenHandler : ITokenHandler
 {
-    readonly IConfiguration _configuration;
+    private readonly IConfiguration _configuration;
 
     public TokenHandler(IConfiguration configuration)
     {
         _configuration = configuration;
     }
 
-    
+
     public Application.DTOs.Token.Token CreateAccessToken(int second, AppUser user)
     {
         Application.DTOs.Token.Token token = new();
@@ -39,7 +39,7 @@ public class TokenHandler: ITokenHandler
             signingCredentials: signingCredentials,
             claims: new List<Claim> { new(ClaimTypes.Name, user.UserName) }
         );
-        
+
         // token olusturucu siniftan bir ornek alalım.
         JwtSecurityTokenHandler tokenHandler = new();
         token.AccessToken = tokenHandler.WriteToken(securityToken);
@@ -50,8 +50,8 @@ public class TokenHandler: ITokenHandler
 
     public string CreateRefreshToken()
     {
-        byte[] number = new byte[32];
-        using RandomNumberGenerator random = RandomNumberGenerator.Create();
+        var number = new byte[32];
+        using var random = RandomNumberGenerator.Create();
         random.GetBytes(number);
         return Convert.ToBase64String(number);
     }

@@ -1,5 +1,3 @@
-using System.Security.Claims;
-using ECommerceAPI.Application.DTOs;
 using ECommerceAPI.Application.DTOs.User;
 using ECommerceAPI.Domain.Entities.Identity;
 using MediatR;
@@ -8,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceAPI.Application.Features.Queries.GetUser;
 
-public class GetUserQueryHandler : IRequestHandler<GetUserQueryRequest,GetUserQueryResponse>
+public class GetUserQueryHandler : IRequestHandler<GetUserQueryRequest, GetUserQueryResponse>
 {
     private readonly UserManager<AppUser> _userManager;
 
@@ -22,7 +20,7 @@ public class GetUserQueryHandler : IRequestHandler<GetUserQueryRequest,GetUserQu
         var users = await _userManager.Users.ToListAsync();
         var response = new GetUserQueryResponse
         {
-            Users = users.Select(user => new UserDto()
+            Users = users.Select(user => new UserDto
             {
                 Id = user.Id,
                 NameSurname = user.NameSurname,

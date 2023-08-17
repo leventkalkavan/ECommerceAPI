@@ -1,7 +1,5 @@
-using System.Data;
 using Serilog.Core;
 using Serilog.Events;
-using Serilog.Sinks.MSSqlServer;
 
 namespace ECommerceAPI.API.Configurations;
 
@@ -12,8 +10,8 @@ public class UsernameColumnOptions : ILogEventEnricher
         var (username, value) = logEvent.Properties.FirstOrDefault(x => x.Key == "UserName");
         if (value != null)
         {
-            var getValue=  propertyFactory.CreateProperty(username,value);
+            var getValue = propertyFactory.CreateProperty(username, value);
             logEvent.AddPropertyIfAbsent(getValue);
-        }          
+        }
     }
 }

@@ -1,5 +1,3 @@
-using ECommerceAPI.Application.DTOs;
-
 namespace ECommerceAPI.Application.Features.Commands.AppUser.UpdateUser;
 
 public class UpdateUserCommandResponse

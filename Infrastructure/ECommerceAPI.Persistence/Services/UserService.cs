@@ -1,12 +1,11 @@
 using ECommerceAPI.Application.Abstractions.Services;
 using ECommerceAPI.Application.DTOs.User;
-using ECommerceAPI.Application.Features.Commands.AppUser.CreateUser;
 using ECommerceAPI.Domain.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace ECommerceAPI.Persistence.Services;
 
-public class UserService: IUserService
+public class UserService : IUserService
 {
     private readonly UserManager<AppUser> _userManager;
 
@@ -17,14 +16,14 @@ public class UserService: IUserService
 
     public async Task<CreateUserResponseDto> CreateAsync(CreateUserDto model)
     {
-        IdentityResult result = await _userManager.CreateAsync(new()
+        var result = await _userManager.CreateAsync(new AppUser
         {
             Id = Guid.NewGuid().ToString(),
             UserName = model.UserName,
             Email = model.Email,
-            NameSurname = model.NameSurname,
+            NameSurname = model.NameSurname
         }, model.Password);
-        
+
         CreateUserResponseDto response = new() { IsSuccess = result.Succeeded };
 
         if (result.Succeeded)
@@ -35,9 +34,10 @@ public class UserService: IUserService
         return response;
     }
 
-    public async Task UpdateRefreshToken(string refreshToken, AppUser user, DateTime accessTokenDate, int refreshTokenDate)
+    public async Task UpdateRefreshToken(string refreshToken, AppUser user, DateTime accessTokenDate,
+        int refreshTokenDate)
     {
-        AppUser appUser = await _userManager.FindByIdAsync(user.Id);
+        var appUser = await _userManager.FindByIdAsync(user.Id);
         if (appUser != null)
         {
             appUser.RefreshToken = refreshToken;
@@ -45,6 +45,8 @@ public class UserService: IUserService
             await _userManager.UpdateAsync(appUser);
         }
         else
-        throw new Exception();
+        {
+            throw new Exception();
+        }
     }
 }

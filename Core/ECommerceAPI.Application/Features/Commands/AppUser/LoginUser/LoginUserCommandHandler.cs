@@ -1,12 +1,9 @@
 using ECommerceAPI.Application.Abstractions.Services;
-using ECommerceAPI.Application.Abstractions.Token;
-using ECommerceAPI.Application.DTOs.Token;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
 
 namespace ECommerceAPI.Application.Features.Commands.AppUser.LoginUser;
 
-public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest,LoginUserCommandResponse>
+public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, LoginUserCommandResponse>
 {
     private readonly IAuthService _authService;
 
@@ -18,10 +15,10 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest,L
     public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request,
         CancellationToken cancellationToken)
     {
-        var token = await _authService.LoginAsync(request.UsernameOrEmail,request.Password,125);
-        return new LoginUserCommandSuccessResponse()
+        var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 125);
+        return new LoginUserCommandSuccessResponse
         {
-            Token =   token
+            Token = token
         };
     }
 }

@@ -15,11 +15,13 @@ public static class ServiceRegistation
     {
         serviceCollection.AddScoped<IStorageService, StorageService>();
     }
+
     public static void AddStorage<T>(this IServiceCollection serviceCollection) where T : Storage, IStorage
     {
         serviceCollection.AddScoped<IStorage, T>();
         serviceCollection.AddScoped<ITokenHandler, TokenHandler>();
     }
+
     public static void AddStorage(this IServiceCollection serviceCollection, StorageType storageType)
     {
         switch (storageType)

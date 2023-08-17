@@ -1,5 +1,3 @@
-using ECommerceAPI.Application.Abstractions.Token;
-
 namespace ECommerceAPI.Application.DTOs.Token;
 
 public class Token

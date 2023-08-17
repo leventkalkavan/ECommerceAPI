@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ECommerceAPI.Application.Features.Commands.Product.DeleteProduct;
 
-public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest,DeleteProductCommandResponse>
+public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandRequest, DeleteProductCommandResponse>
 {
     private readonly IProductWriteRepository _productWriteRepository;
 
@@ -13,11 +13,12 @@ public class DeleteProductCommandHandler : IRequestHandler<DeleteProductCommandR
         _productWriteRepository = productWriteRepository;
     }
 
-    public async Task<DeleteProductCommandResponse> Handle(DeleteProductCommandRequest request, CancellationToken cancellationToken)
+    public async Task<DeleteProductCommandResponse> Handle(DeleteProductCommandRequest request,
+        CancellationToken cancellationToken)
     {
         await _productWriteRepository.RemoveAsync(request.Id);
         await _productWriteRepository.SaveAsync();
-        return new()
+        return new DeleteProductCommandResponse
         {
             IsSuccess = true
         };
