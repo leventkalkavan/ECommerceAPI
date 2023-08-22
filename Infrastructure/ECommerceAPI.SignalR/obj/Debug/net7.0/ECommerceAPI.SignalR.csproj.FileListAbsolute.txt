@@ -1,0 +1,17 @@
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.SignalR.deps.json
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.SignalR.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.SignalR.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.Application.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.Domain.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.Application.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/bin/Debug/net7.0/ECommerceAPI.Domain.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.csproj.AssemblyReference.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.GeneratedMSBuildEditorConfig.editorconfig
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.AssemblyInfoInputs.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.AssemblyInfo.cs
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.csproj.CoreCompileInputs.cache
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.csproj.CopyComplete
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/refint/ECommerceAPI.SignalR.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ECommerceAPI.SignalR.pdb
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Infrastructure/ECommerceAPI.SignalR/obj/Debug/net7.0/ref/ECommerceAPI.SignalR.dll

@@ -310,3 +310,5 @@
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Serilog.Sinks.PeriodicBatching.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Serilog.Sinks.Seq.dll
 /Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/Serilog.Sinks.MSSqlServer.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/ECommerceAPI.SignalR.dll
+/Users/leventkalkavan/Desktop/MiniECommerceApp/ECommerceAPI/Prestation/ECommerceAPI.API/bin/Debug/net7.0/ECommerceAPI.SignalR.pdb
