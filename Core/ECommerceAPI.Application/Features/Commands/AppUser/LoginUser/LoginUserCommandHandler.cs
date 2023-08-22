@@ -15,7 +15,7 @@ public class LoginUserCommandHandler : IRequestHandler<LoginUserCommandRequest, 
     public async Task<LoginUserCommandResponse> Handle(LoginUserCommandRequest request,
         CancellationToken cancellationToken)
     {
-        var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 125);
+        var token = await _authService.LoginAsync(request.UsernameOrEmail, request.Password, 900);
         return new LoginUserCommandSuccessResponse
         {
             Token = token

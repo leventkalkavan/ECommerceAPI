@@ -81,38 +81,37 @@ public class AuthService : IAuthService
 
     public async Task<Token> LoginAsync(string usernameOrEmail, string password, int accessTokenLifeTime)
     {
-        var user = await _userManager.FindByNameAsync(usernameOrEmail);
+        Domain.Entities.Identity.AppUser user = await _userManager.FindByNameAsync(usernameOrEmail);
         if (user == null)
             user = await _userManager.FindByEmailAsync(usernameOrEmail);
 
         if (user == null)
             throw new Exception();
 
-        var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
+        SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
         if (result.Succeeded) //Authentication başarılı!
         {
-            var token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
+            Token token = _tokenHandler.CreateAccessToken(accessTokenLifeTime, user);
             await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 15);
             return token;
         }
-
         throw new Exception();
     }
 
     public async Task<Token> RefreshTokenLoginAsync(string refreshToken)
     {
-        var user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+        AppUser? user = await _userManager.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
         if (user != null && user?.RefreshTokenTime > DateTime.UtcNow)
         {
-            var token = _tokenHandler.CreateAccessToken(15, user);
-            await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 15);
+            Token token = _tokenHandler.CreateAccessToken(15, user);
+            await _userService.UpdateRefreshToken(token.RefreshToken, user, token.Expiration, 900);
             return token;
         }
-
-        throw new Exception();
+        else
+            throw new Exception();
     }
 
-    private async Task<Token> CreateUserExternalAsync(AppUser user, string email, string name, UserLoginInfo info,
+    async Task<Token> CreateUserExternalAsync(AppUser user, string email, string name, UserLoginInfo info,
         int accessTokenLifeTime)
     {
         var result = user != null;
